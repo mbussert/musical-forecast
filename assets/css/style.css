@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+main {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.landing {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1),
+                       rgba(0, 0, 0, 0.5)), url("../images/priscilla-du-preez-NP3KdAQc6c4-unsplash.jpg");
+    background-size: cover;
+    padding: 0rem 5rem;
+}
+
+nav {
+    display: flex;
+    justify-content:flex-end;
+    justify-items: normal;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding-right: 5rem;
+}
+
+.nav-links li {
+    font-size: 1.3rem;
+    color: white;
+    margin-left: 2rem;
+}
+
+.nav-links li:hover {
+    color: rgb(59, 59, 59);
+    cursor: pointer;
+}
+
+.big-text {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(-70%, -30%);
+    font-size: 5rem;
+    color: rgb(59, 59, 59);
+}
+
+.intro {
+    background: rgb(59, 59, 59);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-text {
+    color: rgb(227, 242, 255);
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 3rem;
+}
+
+.slider {
+    background: rgb(117,110,111);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+}
+
+.hide {
+    background: rgb(59, 59, 59);
+    overflow: hidden;
+}
+
+.hide span {
+    transform: translateY(100%);
+    display: inline-block;
+}
