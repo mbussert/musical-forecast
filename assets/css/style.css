@@ -41,7 +41,11 @@ nav {
     color: rgb(59, 59, 59);
     cursor: pointer;
 }
-
+.cityFinder {
+    position: absolute;
+    top: 30%;
+    right: 45%;
+}
 .big-text {
     position: absolute;
     top: 30%;
