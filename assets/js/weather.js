@@ -13,12 +13,13 @@ $(document).ready(function() {
         .then(function (data) {
             console.log(data);
             let city = $('<div>').text(data.name);
-            let temp = $('<div>').text(Math.round(data.main.temp) + String.fromCharCode(176));
-            let high = $('<div>').text('High of ' + (data.main.temp_max) + String.fromCharCode(176));
-            let low = $('<div>').text('Low of ' + (data.main.temp_min) + String.fromCharCode(176))
+            let temp = $('<div>').text('Currently, it is ' + (Math.round(data.main.temp)) + String.fromCharCode(176));
+            let high = $('<div>').text('High of ' + (Math.round(data.main.temp_max)) + String.fromCharCode(176));
+            let low = $('<div>').text('Low of ' + (Math.round(data.main.temp_min)) + String.fromCharCode(176));
+            let icon = $('<img>').attr('src', 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
 
             // $('.home').attr('style', 'border: 2px solid black')
-            $('.current-condition').append(city, temp, high, low)
+            $('.current-condition').append(city, temp.append(icon), high, low)
         })
     }
 
