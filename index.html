@@ -14,6 +14,8 @@
     <main>
         <section class="landing">
             <nav>
+
+                <!-- nav bar needs to be linked to corresponding section -->
             <ul class="nav-links">
                 <!-- displays weather and songs -->
                 <li>Home</li>
@@ -25,9 +27,14 @@
             </ul>
             </nav>
             <h2 class="big-text">Musical Forecast</h2>
+
             <!-- this needs to be centered -->
             <input type="text" class="cityFinder" id="cityFinder">
-            <button class="finder-btn" id="finder-btn"></button>
+            
+            <!-- add icon to button and make both larger -->
+            <button class="finder-btn" id="finder-btn">
+                <!-- icon here -->
+            </button>
         </section>
     </main>
     <div class="intro">
@@ -45,7 +52,35 @@
     </div>
     <div class="slider"></div>
 
-    
+    <!-- contains weather and future conditions -->
+    <select id=home class="home">
+        <div id="current-condition" class="current-condition">
+            <!-- add current conditions in here -->
+        </div>
+        <div id="future-conditions" class="future-conditions">
+            <!-- add future conditions in here -->
+        </div>
+    </select>
+
+    <!-- contains music -->
+    <section id="generate" class="generate">
+        <div class="daily-playlist" id="daily-playlist">
+            <!-- add playlist to this div -->
+        </div>
+    </section>
+
+    <!-- self explanitory -->
+    <section id="about" class="about">
+        <div id="about-us" class="about-us">
+            <!-- need to write an about section containing names, 
+                bootcamp, inspiration and other ideas are welcome -->
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <!-- add link to repository -->
+    </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
 <script src="./assets/js/main.js"></script>
