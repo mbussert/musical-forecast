@@ -1,5 +1,6 @@
-$(document).ready(function () {
-    let weatherButton = $('.finder-btn');
+
+$(document).ready(function() {
+    let weatherButton = $('.button');
 
     // function that fetches api 
     function getApi(name) {
@@ -71,3 +72,5 @@ $(document).ready(function () {
     // this is the api key you can use
     // https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=9c15991b27b985193a8286709e2840d9&units=imperial
 })
+
+document.createElement
