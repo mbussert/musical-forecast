@@ -43,7 +43,11 @@ $(document).ready(function() {
         getApi(searches);
         
     })
+<<<<<<< HEAD
     // akdfj;lsdalfj
+=======
+    
+>>>>>>> 601856d1e1e093fcb56f1d83874e8bd5bf437625
     // your 5 day forecast function will go here
     // this is the api key you can use
     // https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=9c15991b27b985193a8286709e2840d9&units=imperial
