@@ -41,11 +41,27 @@ nav {
     color: rgb(59, 59, 59);
     cursor: pointer;
 }
-.cityFinder {
+/* .cityFinder {
     position: absolute;
     top: 30%;
     right: 45%;
+} */
+
+.inputSection {
+    /* position: absolute; */
+    /* top: 30%; */
+    /* right: 45%; */
+    margin: auto;
 }
+
+.finder-btn:hover { 
+    /* width: 6vw; */
+    /* height: 3vw; */
+    /* background-color: green; */
+    /* opacity: 55vw; */
+    /* background-color: black; */
+}
+
 .big-text {
     position: absolute;
     top: 30%;
