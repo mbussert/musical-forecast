@@ -1,5 +1,4 @@
-
-$(document).ready(function() {
+$(document).ready(function () {
     let weatherButton = $('.button');
 
     // function that fetches api 
@@ -59,8 +58,7 @@ $(document).ready(function() {
 
             .then(function (data) {
                 console.log(data);
-                for (let i = 1; i < 6; i++)
-                {
+                for (let i = 1; i < 6; i++) {
                     let fivedaytemp = $("<div>").text(Math.round(data.daily[i].temp.day) + String.fromCharCode(176));
                     console.log(fivedaytemp);
                     $('.future-conditions').append(fivedaytemp)
@@ -72,5 +70,3 @@ $(document).ready(function() {
     // this is the api key you can use
     // https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=9c15991b27b985193a8286709e2840d9&units=imperial
 })
-
-document.createElement

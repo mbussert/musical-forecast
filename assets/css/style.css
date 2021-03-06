@@ -7,14 +7,19 @@
 
 main {
     font-family: 'Fira Sans', sans-serif;
+    /* width: 100%; */
 }
+
+/* .hero-body { */
+    /* width: 100%; */
+/* } */
 
 .landing {
     min-height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.1),
                        rgba(0, 0, 0, 0.5)), url("../images/priscilla-du-preez-NP3KdAQc6c4-unsplash.jpg");
     background-size: cover;
-    padding: 0rem 5rem;
+    /* padding: 0rem 5rem; */
 }
 
 nav {
