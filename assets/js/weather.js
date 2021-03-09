@@ -1,5 +1,10 @@
-$(document).ready(function () {
+// $(document).ready(function () {
     let weatherButton = $('.button');
+    let introBtn = $('#introButton');
+
+    // function recentSearches() {
+
+    // }
 
     // function that fetches api 
     function getApi(name) {
@@ -43,7 +48,21 @@ $(document).ready(function () {
         // tells the computer to display the data from lines 20-29
         getApi(searches);
 
-    })
+    });
+
+    introBtn.on('click', function () {
+        $('.searchIntro').hide();
+        let cSearch = $('.introInput').val().trim()
+
+        // cSearch.hide()
+        // console.log(cSearch)
+        // citySearch()
+        getApi(cSearch);
+        // getfiveday(cSearch);
+
+        // tl.to('.searchIntro', {y:'0%', duration: 1, stagger: 1});
+
+})
 
 
     function getfiveday(lat, lon) {
@@ -60,7 +79,7 @@ $(document).ready(function () {
                 console.log(data);
                 for (let i = 1; i < 6; i++) {
                     let fivedaytemp = $("<div>").text(Math.round(data.daily[i].temp.day) + String.fromCharCode(176));
-                    console.log(fivedaytemp);
+                    // console.log(fivedaytemp);
                     $('.future-conditions').append(fivedaytemp)
                 }
             })
@@ -69,4 +88,4 @@ $(document).ready(function () {
     // your 5 day forecast function will go here
     // this is the api key you can use
     // https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=9c15991b27b985193a8286709e2840d9&units=imperial
-})
+// })

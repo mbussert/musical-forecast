@@ -24,32 +24,42 @@
                 <!-- nav bar needs to be linked to corresponding section -->
                 <ul class="nav-links">
                     <!-- displays weather and songs -->
-                    <li>Home</li>
+                    <li><a href="#home">Home</a></li>
                     <!-- displays playlist based on weather -->
-                    <li>Generate Music</li>
+                    <li><a href="#generate">Generate Music</a></li>
                     <!-- creator names, how it works -->
-                    <li>About</li>
+                    <li><a href="#about">About</a></li>
                     <!-- self explanitory -->
-                    <li>Contact</li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 </ul>
             </nav>
             <h2 class="big-text">Musical Forecast</h2>
 
             <!-- this needs to be centered -->
-            <section class="inputSection" id="inputSection">
-                <input type="text" class="cityFinder" id="cityFinder">
+            <section class="inputSection mr-3 is-large" id="inputSection">
+                <input type="text" class="cityFinder is-large p-3 pl-3 mr-3" id="cityFinder">
                 <!-- add icon to button and make both larger -->
-                <button class="button is-default is-light is-rounded" id="finder-btn">
+                <button class="button is-medium is-rounded" id="finder-btn">
                     <!-- icon here -->
                     <span class="icon">
-                        <i class="fas fa-search is-large"></i>
+                        <i class="fas fa-search is-small"></i>
                     </span>
                 </button>
             </section>
         </section>
     </main>
-    <!-- <div class="intro">
+
+    <!-- <div class="searchIntro">
+        <input type="text" placeholder="Search a city here..."  class="introInput mr-3" id="introInput">
+        <button class="button is-large is-rounded" id="introButton">
+            <span class="btnIcon">
+                <i class="fas fa-search is-small"></i>
+            </span>
+        </button>
+    </div>
+
+    <div class="intro">
         <div class="intro-text">
             <h1 class="hide">
                 <span class="text">Connecting users</span>
