@@ -37,6 +37,7 @@ let getPlaylist = function (weather) {
 
     fetch(apiUrl, {
         method: 'GET',
+        mode: 'cors',
         headers: {
             'Authorization': 'Bearer ' + access_token
         },
@@ -63,6 +64,7 @@ let getPlaylistTracks = function (playlistId) {
 
     fetch(apiUrl, {
         method: 'GET',
+        mode: 'cors',
         headers: {
             'Authorization': 'Bearer ' + access_token
         },
@@ -70,10 +72,7 @@ let getPlaylistTracks = function (playlistId) {
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
-                    console.log(data);
-                    tracks = data;
-                    console.log(tracks);
-                    displayTracks(tracks);
+                    displayTracks(playlistId);
                 });
             } else {
                 alert('Error: ' + response.statusText);
@@ -85,7 +84,6 @@ let getPlaylistTracks = function (playlistId) {
 }
 
 let displayTracks = function (playlistId) {
-    
     console.log(playlistId);
     dailyPlaylist.innerHTML = `<iframe src="https://open.spotify.com/embed/playlist/` + playlistId + `" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
 }
