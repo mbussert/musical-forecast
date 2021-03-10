@@ -1,4 +1,4 @@
-// $(document).ready(function () {
+$(document).ready(function () {
     let weatherButton = $('.button');
     let introBtn = $('#introButton');
 
@@ -52,12 +52,15 @@
 
     introBtn.on('click', function () {
         $('.searchIntro').hide();
-        let cSearch = $('.introInput').val().trim()
+        let cSearch = $('.introInput').val().trim();
+        getApi(cSearch);
+
+        // window.location("forecast.html")
+        // $('forecast.html').show();
 
         // cSearch.hide()
         // console.log(cSearch)
         // citySearch()
-        getApi(cSearch);
         // getfiveday(cSearch);
 
         // tl.to('.searchIntro', {y:'0%', duration: 1, stagger: 1});
@@ -88,4 +91,4 @@
     // your 5 day forecast function will go here
     // this is the api key you can use
     // https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=9c15991b27b985193a8286709e2840d9&units=imperial
-// })
+})
