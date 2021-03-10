@@ -83,6 +83,7 @@ let getPlaylistTracks = function (playlistId) {
 }
 
 let displayTracks = function (playlistId) {
+    refreshAccessToken();
     console.log(playlistId);
     dailyPlaylist.innerHTML = `<iframe src="https://open.spotify.com/embed/playlist/` + playlistId + `" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
 }
