@@ -39,7 +39,7 @@ let getPlaylist = function () {
         headers: {
             'Authorization': 'Bearer ' + access_token
         },
-        method: 'POST',
+        method: 'GET',
         contentType: 'application/json'
     })
         .then(function (response) {
@@ -63,7 +63,7 @@ let getPlaylistTracks = function (playlistId) {
     let apiUrl = 'https://api.spotify.com/v1/playlists/' + playlistId + '/tracks';
 
     fetch(apiUrl, {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + access_token
         },
