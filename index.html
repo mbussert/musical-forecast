@@ -12,47 +12,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/duotone.css"
-        integrity="sha384-R3QzTxyukP03CMqKFe0ssp5wUvBPEyy9ZspCB+Y01fEjhMwcXixTyeot+S40+AjZ" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/fontawesome.css"
-        integrity="sha384-eHoocPgXsiuZh+Yy6+7DsKAerLXyJmu2Hadh4QYyt+8v86geixVYwFqUvMU8X90l" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <main>
         <section class="landing">
-            <nav>
+            <nav class="hero-body has-background-dark has-text-white is-max-width">
                 <!-- nav bar needs to be linked to corresponding section -->
                 <ul class="nav-links">
                     <!-- displays weather and songs -->
-                    <li>Home</li>
+                    <li><a href="#home">Home</a></li>
                     <!-- displays playlist based on weather -->
-                    <li>Generate Music</li>
+                    <li><a href="#generate">Generate Music</a></li>
                     <!-- creator names, how it works -->
-                    <li>About</li>
+                    <li><a href="#about">About</a></li>
                     <!-- self explanitory -->
-                    <li>Contact</li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 </ul>
             </nav>
             <h2 class="big-text">Musical Forecast</h2>
 
             <!-- this needs to be centered -->
-            <section class="inputSection" id="inputSection">
-                <input type="text" class="cityFinder" id="cityFinder">
+            <section class="inputSection mr-3 is-large" id="inputSection">
+                <input type="text" class="cityFinder is-large p-3 pl-3 mr-3" id="cityFinder">
                 <!-- add icon to button and make both larger -->
-                <button class="button is-default is-light is-rounded" id="finder-btn">
+                <button class="button is-medium is-rounded" id="finder-btn">
                     <!-- icon here -->
                     <span class="icon">
-                        <i class="fas fa-search is-large"></i>
+                        <i class="fas fa-search is-small"></i>
                     </span>
                 </button>
             </section>
             <button class="button is-default is-light is-rounded" id="testbtn" onclick="requestAuthorization()">TEST FOR MUSIC</button>
         </section>
     </main>
-    <!-- <div class="intro">
+
+    <div class="searchIntro">
+        <input type="text" placeholder="Search a city here..."  class="introInput mr-3" id="introInput">
+        <button class="button is-large is-rounded" id="introButton">
+            <span class="btnIcon">
+                <i class="fas fa-search is-small"></i>
+            </span>
+        </button>
+    </div>
+
+    <div class="intro">
         <div class="intro-text">
             <h1 class="hide">
                 <span class="text">Connecting users</span>
@@ -65,12 +73,12 @@
             </h1>
         </div>
     </div>
-    <div class="slider"></div> -->
+    <div class="slider"></div>
 
 
     <!-- contains weather and future conditions -->
-    <section id=home class="home is-align-content-center">
-        <div id="current-condition" class="current-condition">
+    <section id=home class="home hero-body has-background-dark has-text-white">
+        <div id="current-condition" class="current-condition p-3">
             <!-- add current conditions in here -->
         </div>
         <div id="future-conditions" class="future-conditions">
