@@ -1,4 +1,4 @@
-let redirect_uri = "https://mbussert.github.io/musical-forecast/index.html";
+let redirect_uri = "https://mbussert.github.io/musical-forecast/forecast.html";
 let client_id = "a80428ee1bea4c86801a2d7de41899d5";
 let client_secret = "ba5ef19bb0d749b7af33e52b2feef458";
 let access_token = null;
