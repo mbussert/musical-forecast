@@ -37,7 +37,6 @@ let getPlaylist = function (weather) {
 
     fetch(apiUrl, {
         method: 'GET',
-        credentials: 'same-origin',
         headers: {
             'Authorization': 'Bearer ' + access_token
         },
@@ -64,7 +63,6 @@ let getPlaylistTracks = function (playlistId) {
 
     fetch(apiUrl, {
         method: 'GET',
-        credentials: 'same-origin',
         headers: {
             'Authorization': 'Bearer ' + access_token
         },
