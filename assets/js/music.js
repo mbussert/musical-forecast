@@ -32,22 +32,23 @@ function onPageLoad() {
     }
 }
 
-let getPlaylist = function (weather) {
+let getPlaylist = function () {
     let apiUrl = 'https://api.spotify.com/v1/browse/categories/party/playlists?country=US&limit=1'; // Swap out party for the weather type
 
     fetch(apiUrl, {
-        method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + access_token
         },
+        method: 'POST',
+        contentType: 'application/json'
     })
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
                     console.log(data);
                     playlistId = data.playlists.items[0].id
-
-                    getPlaylistTracks(playlistId);
+                    console.log('Fetched');
+                    // getPlaylistTracks(playlistId);
                 });
             } else {
                 alert('Error: ' + response.statusText);
