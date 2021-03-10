@@ -1,5 +1,4 @@
-
-let redirect_uri = "https://mbussert.github.io/musical-forecast/index.html";
+let redirect_uri = "https://mbussert.github.io/musical-forecast/forecast.html";
 let client_id = "a80428ee1bea4c86801a2d7de41899d5";
 let client_secret = "ba5ef19bb0d749b7af33e52b2feef458";
 let access_token = null;
@@ -37,8 +36,7 @@ let getPlaylist = function (weather) {
     let apiUrl = 'https://api.spotify.com/v1/browse/categories/party/playlists?country=US&limit=1'; // Swap out party for the weather type
 
     fetch(apiUrl, {
-        method: 'GET',
-        credentials: 'same-origin',
+        method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + access_token
         },
@@ -64,8 +62,7 @@ let getPlaylistTracks = function (playlistId) {
     let apiUrl = 'https://api.spotify.com/v1/playlists/' + playlistId + '/tracks';
 
     fetch(apiUrl, {
-        method: 'GET',
-        credentials: 'same-origin',
+        method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + access_token
         },
@@ -73,10 +70,7 @@ let getPlaylistTracks = function (playlistId) {
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
-                    console.log(data);
-                    tracks = data;
-                    console.log(tracks);
-                    displayTracks(tracks);
+                    displayTracks(playlistId);
                 });
             } else {
                 alert('Error: ' + response.statusText);
@@ -88,6 +82,7 @@ let getPlaylistTracks = function (playlistId) {
 }
 
 let displayTracks = function (playlistId) {
+    console.log(playlistId);
     dailyPlaylist.innerHTML = `<iframe src="https://open.spotify.com/embed/playlist/` + playlistId + `" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
 }
 
