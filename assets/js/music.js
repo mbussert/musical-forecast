@@ -48,7 +48,6 @@ let getPlaylist = function () {
                     console.log(data);
                     playlistId = data.playlists.items[0].id
                     console.log('Fetched');
-                    getPlaylistTracks();
                 });
             } else {
                 alert('Error: ' + response.statusText);
@@ -74,7 +73,7 @@ let getPlaylistTracks = function (playlistId) {
                     displayTracks(playlistId);
                 });
             } else {
-                alert('Error: ' + response.statusText);
+                alert('Error: No Tracks' + response.statusText);
             }
         })
         .catch(function (error) {
