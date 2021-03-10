@@ -47,7 +47,9 @@ let getPlaylist = function () {
                 response.json().then(function (data) {
                     console.log(data);
                     playlistId = data.playlists.items[0].id
-                    console.log('Fetched');
+                    console.log('Got Playlist');
+
+                    getPlaylistTracks(playlistId);
                 });
             } else {
                 alert('Error: ' + response.statusText);
@@ -70,7 +72,10 @@ let getPlaylistTracks = function (playlistId) {
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
-                    displayTracks(playlistId);
+                    console.log(data);
+                    tracks = data;
+                    console.log(tracks);
+                    displayTracks(tracks);
                 });
             } else {
                 alert('Error: No Tracks' + response.statusText);
@@ -82,7 +87,7 @@ let getPlaylistTracks = function (playlistId) {
 }
 
 let displayTracks = function (playlistId) {
-    console.log(playlistId);
+    console.log('displayTracks Triggered');
     dailyPlaylist.innerHTML = `<iframe src="https://open.spotify.com/embed/playlist/` + playlistId + `" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
 }
 
