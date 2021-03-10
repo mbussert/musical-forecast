@@ -36,8 +36,7 @@ let getPlaylist = function (weather) {
     let apiUrl = 'https://api.spotify.com/v1/browse/categories/party/playlists?country=US&limit=1'; // Swap out party for the weather type
 
     fetch(apiUrl, {
-        method: 'GET',
-        mode: 'cors',
+        method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + access_token
         },
@@ -63,8 +62,7 @@ let getPlaylistTracks = function (playlistId) {
     let apiUrl = 'https://api.spotify.com/v1/playlists/' + playlistId + '/tracks';
 
     fetch(apiUrl, {
-        method: 'GET',
-        mode: 'cors',
+        method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + access_token
         },
