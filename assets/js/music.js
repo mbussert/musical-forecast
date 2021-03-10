@@ -75,7 +75,7 @@ let getPlaylistTracks = function (playlistId) {
                     console.log(data);
                     tracks = data;
                     console.log(tracks);
-                    displayTracks(tracks);
+                    displayTracks(playlistId);
                 });
             } else {
                 alert('Error: No Tracks' + response.statusText);
