@@ -5,7 +5,7 @@ let access_token = null;
 let refresh_token = null;
 let playlistId = "";
 let count = 0;
-let dailyPlaylist = document.querySelector('#daily-playlist');
+let dailyPlaylist = document.querySelector('#show-playlist');
 let tracks = [];
 let AUTHORIZE = "https://accounts.spotify.com/authorize"
 let TOKEN = "https://accounts.spotify.com/api/token";
@@ -48,7 +48,7 @@ let getPlaylist = function () {
                     console.log(data);
                     playlistId = data.playlists.items[0].id
                     console.log('Fetched');
-                    // getPlaylistTracks(playlistId);
+                    displayTracks();
                 });
             } else {
                 alert('Error: ' + response.statusText);
