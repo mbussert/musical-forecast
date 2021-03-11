@@ -14,3 +14,7 @@ For this file, we created a promise that fetches the current forecast and on the
 MUSIC.JS
 
 For the music.js file, we created an onload function that includs the redirection to the client id and password, and saves to local storage. This file contains a function to get a playlist and a function to get the tracks. We also created a function to display the music being played. Most of the work in this file was spent creating functions to allow users to fully access our webpage after logging in to their personal spotify account.
+
+## LINK TO DEPLOYED WEBSITE
+
+https://mbussert.github.io/musical-forecast
