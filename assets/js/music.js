@@ -35,23 +35,23 @@ function onPageLoad() {
 
 let getPlaylist = function (weatherDesc) {
     
-    if (weatherDesc == 'clear sky') {
+    if (weatherDesc = 'clear sky') {
         playlistWeather = 'decades';
-    } else if (weatherDesc == 'few clouds') {
+    } else if (weatherDesc = 'few clouds') {
         playlistWeather = 'chill';
-    } else if (weatherDesc == 'scattered clouds') {
+    } else if (weatherDesc = 'scattered clouds') {
         playlistWeather = 'rock';
-    } else if (weatherDesc == 'broken clouds') {
+    } else if (weatherDesc = 'broken clouds') {
         playlistWeather = 'hiphop';
-    } else if (weatherDesc == 'shower rain') {
+    } else if (weatherDesc = 'shower rain') {
         playlistWeather = 'focus';
-    } else if (weatherDesc == 'rain') {
+    } else if (weatherDesc = 'rain') {
         playlistWeather = 'latin';
-    } else if (weatherDesc == 'thunderstorm') {
+    } else if (weatherDesc = 'thunderstorm') {
         playlistWeather = 'instrumental';
-    } else if (weatherDesc == 'snow') {
+    } else if (weatherDesc = 'snow') {
         playlistWeather = 'inspirational';
-    } else if (weatherDesc == 'mist') {
+    } else if (weatherDesc = 'mist') {
         playlistWeather = 'alternative';
     }
 

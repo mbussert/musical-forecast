@@ -31,7 +31,8 @@
                 // icons are images so they are put in img tags
                 let icon = $('<img>').attr('src', 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
 
-                weatherDesc = data.weather.description;
+                weatherDesc = data.weather[0].description;
+                console.log(weatherDesc);
 
                 // i appended the city, temps and icon to the current-condition element from the html file
                 // you will need to append your data to a different element
