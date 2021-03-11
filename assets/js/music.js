@@ -54,6 +54,9 @@ let getPlaylist = function (weatherDesc) {
     } else if (weatherDesc == 'mist') {
         playlistWeather = 'alternative';
     }
+
+    counsel.log(weatherDesc);
+    counsel.log(playlistWeather);
     
     let apiUrl = 'https://api.spotify.com/v1/browse/categories/' + playlistWeather + '/playlists?country=US&limit=1'; // Swap out party for the weather type
 
