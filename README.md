@@ -25,6 +25,11 @@ MUSIC.JS
 
 For the music.js file, we created an onload function that includs the redirection to the client id and password, and saves to local storage. This file contains a function to get a playlist and a function to get the tracks. We also created a function to display the music being played. Most of the work in this file was spent creating functions to allow users to fully access our webpage after logging in to their personal spotify account.
 
+
+## LINK TO DEPLOYED WEBSITE
+
+https://mbussert.github.io/musical-forecast
+
 APP.JS
 
 The app.js file contains the client spotify authorization to load songs after the search button has been clicked and a max number of songs to be displayed.
@@ -32,3 +37,4 @@ The app.js file contains the client spotify authorization to load songs after th
 CSS
 
 For the CSS file, we tried to minimize the amount of CSS styling because our main focus was to use Bulma. 
+
