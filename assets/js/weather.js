@@ -2,6 +2,8 @@
     let weatherButton = $('.button');
     let introBtn = $('#introButton');
 
+    let weatherDesc = '';
+
     // function recentSearches() {
 
     // }
@@ -28,6 +30,8 @@
                 let low = $('<div>').text('Low of ' + (Math.round(data.main.temp_min)) + String.fromCharCode(176));
                 // icons are images so they are put in img tags
                 let icon = $('<img>').attr('src', 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
+
+                weatherDesc = data.weather.description;
 
                 // i appended the city, temps and icon to the current-condition element from the html file
                 // you will need to append your data to a different element

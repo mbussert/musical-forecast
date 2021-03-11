@@ -9,6 +9,7 @@ let dailyPlaylist = document.querySelector('#show-playlist');
 let tracks = [];
 let AUTHORIZE = "https://accounts.spotify.com/authorize"
 let TOKEN = "https://accounts.spotify.com/api/token";
+let playlistWeather = '';
 
 
 function onPageLoad() {
@@ -32,8 +33,29 @@ function onPageLoad() {
     }
 }
 
-let getPlaylist = function () {
-    let apiUrl = 'https://api.spotify.com/v1/browse/categories/party/playlists?country=US&limit=1'; // Swap out party for the weather type
+let getPlaylist = function (weatherDesc) {
+    
+    if (weatherDesc == 'clear sky') {
+        playlistWeather = 'decades';
+    } else if (weatherDesc == 'few clouds') {
+        playlistWeather = 'chill';
+    } else if (weatherDesc == 'scattered clouds') {
+        playlistWeather = 'rock';
+    } else if (weatherDesc == 'broken clouds') {
+        playlistWeather = 'hiphop';
+    } else if (weatherDesc == 'shower rain') {
+        playlistWeather = 'focus';
+    } else if (weatherDesc == 'rain') {
+        playlistWeather = 'latin';
+    } else if (weatherDesc == 'thunderstorm') {
+        playlistWeather = 'instrumental';
+    } else if (weatherDesc == 'snow') {
+        playlistWeather = 'inspirational';
+    } else if (weatherDesc == 'mist') {
+        playlistWeather = 'alternative';
+    }
+    
+    let apiUrl = 'https://api.spotify.com/v1/browse/categories/' + playlistWeather + '/playlists?country=US&limit=1'; // Swap out party for the weather type
 
     fetch(apiUrl, {
         headers: {
