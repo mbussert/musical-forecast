@@ -55,8 +55,8 @@ let getPlaylist = function (weatherDesc) {
         playlistWeather = 'alternative';
     }
 
-    counsel.log(weatherDesc);
-    counsel.log(playlistWeather);
+    console.log(weatherDesc);
+    console.log(playlistWeather);
     
     let apiUrl = 'https://api.spotify.com/v1/browse/categories/' + playlistWeather + '/playlists?country=US&limit=1'; // Swap out party for the weather type
 
