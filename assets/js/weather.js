@@ -14,6 +14,11 @@ $(document).ready(function () {
         }
     }
 
+    function clearWeather() {
+        $('#current-condition').empty();
+        $('#future-conditions').empty();
+    }
+
     $('.cities').on('click', function (event) {
         getApi(event.target.outerText);
     })
@@ -49,6 +54,8 @@ $(document).ready(function () {
     }
 
     weatherButton.on('click', function () {
+        clearWeather();
+        
         // cityFinder is the name of the input box
         let searches = $('#cityFinder').val().trim();
         // .trim()

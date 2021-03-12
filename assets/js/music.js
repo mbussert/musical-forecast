@@ -11,9 +11,6 @@ let AUTHORIZE = "https://accounts.spotify.com/authorize"
 let TOKEN = "https://accounts.spotify.com/api/token";
 let playlistWeather = '';
 
-let clearBtn = document.querySelector('#clear-btn');
-
-
 function onPageLoad() {
     client_id = localStorage.getItem("client_id");
     client_secret = localStorage.getItem("client_secret");
@@ -38,10 +35,6 @@ function onPageLoad() {
 function clearMusic() {
     dailyPlaylist.innerHTML = ``;
 }
-
-clearBtn.on('click', function () {
-    clearMusic();
-})
 
 function updateMusic() {
     clearMusic();
