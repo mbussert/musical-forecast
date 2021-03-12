@@ -13,6 +13,11 @@ $(document).ready(function () {
         }
     }
 
+    function clearWeather() {
+        $('#current-condition').empty();
+        $('#future-conditions').empty();
+    }
+
     $('.cities').on('click', function (event) {
         getApi(event.target.outerText);
     })
@@ -36,8 +41,13 @@ $(document).ready(function () {
                 let low = $('<div>').text('Low of ' + (Math.round(data.main.temp_min) + String.fromCharCode(176)));
                 let icon = $('<img>').attr('src', 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
 
-                $('#current-condition').append(city, temp.append(icon), high, low)
+                weatherDesc = data.weather[0].main;
+                console.log(weatherDesc);
+                getPlaylist(weatherDesc);
 
+                $('.current-condition').empty();
+                $('.current-condition').append(city, temp.append(icon), high, low)
+                
                 getfiveday(data.coord.lat, data.coord.lon)
 
             });
@@ -49,6 +59,7 @@ $(document).ready(function () {
 
     weatherButton.on('click', function () {
         clearWeather();
+        clearMusic();
         let searches = $('#cityFinder').val().trim();
 
         getApi(searches);
@@ -60,7 +71,6 @@ $(document).ready(function () {
             $('#recent-searches').append(cities);
         }
         localStorage.setItem('recent', JSON.stringify(recent));
-
 
     });
 

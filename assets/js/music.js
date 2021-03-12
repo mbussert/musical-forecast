@@ -5,11 +5,11 @@ let access_token = null;
 let refresh_token = null;
 let playlistId = "";
 let count = 0;
-let dailyPlaylist = document.querySelector('#daily-playlist');
+let dailyPlaylist = document.querySelector('#show-playlist');
 let tracks = [];
 let AUTHORIZE = "https://accounts.spotify.com/authorize"
 let TOKEN = "https://accounts.spotify.com/api/token";
-
+let playlistWeather = '';
 
 function onPageLoad() {
     client_id = localStorage.getItem("client_id");
@@ -26,31 +26,59 @@ function onPageLoad() {
         if (access_token == null) {
             requestAuthorization();
         }
-        else {
-            getPlaylist();
-        }
+        // else {
+        //     getPlaylist();
+        // }
     }
 }
 
-let getPlaylist = function (weather) {
-    let apiUrl = 'https://api.spotify.com/v1/browse/categories/party/playlists?country=US&limit=1'; // Swap out party for the weather type
+function clearMusic() {
+    dailyPlaylist.innerHTML = ``;
+}
+
+
+let getPlaylist = function (weatherDesc) {
+    
+    if (weatherDesc == 'Clear') {
+        playlistWeather = 'decades';
+    } else if (weatherDesc == 'Clouds') {
+        playlistWeather = 'rock';
+    } else if (weatherDesc == 'Rain') {
+        playlistWeather = 'focus';
+    } else if (weatherDesc == 'Thunderstorm') {
+        playlistWeather = 'hiphop';
+    } else if (weatherDesc == 'Snow') {
+        playlistWeather = 'inspirational';
+    } else if (weatherDesc == 'Mist') {
+        playlistWeather = 'alternative';
+    } else if (weatherDesc == 'Drizzle') {
+        playlistWeather = 'alternative';
+    } 
+
+    console.log(weatherDesc);
+    console.log(playlistWeather);
+    
+    let apiUrl = 'https://api.spotify.com/v1/browse/categories/' + playlistWeather + '/playlists?country=US&limit=1'; 
 
     fetch(apiUrl, {
-        method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + access_token
         },
+        method: 'GET',
+        contentType: 'application/json'
     })
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
                     console.log(data);
                     playlistId = data.playlists.items[0].id
+                    console.log('Got Playlist');
 
                     getPlaylistTracks(playlistId);
                 });
             } else {
-                alert('Error: ' + response.statusText);
+                // alert('Error: ' + response.statusText);
+                requestAuthorization();
             }
         })
         .catch(function (error) {
@@ -62,7 +90,7 @@ let getPlaylistTracks = function (playlistId) {
     let apiUrl = 'https://api.spotify.com/v1/playlists/' + playlistId + '/tracks';
 
     fetch(apiUrl, {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + access_token
         },
@@ -70,10 +98,13 @@ let getPlaylistTracks = function (playlistId) {
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
+                    console.log(data);
+                    tracks = data;
+                    console.log(tracks);
                     displayTracks(playlistId);
                 });
             } else {
-                alert('Error: ' + response.statusText);
+                alert('Error: No Tracks' + response.statusText);
             }
         })
         .catch(function (error) {
@@ -82,7 +113,7 @@ let getPlaylistTracks = function (playlistId) {
 }
 
 let displayTracks = function (playlistId) {
-    console.log(playlistId);
+    console.log('displayTracks Triggered');
     dailyPlaylist.innerHTML = `<iframe src="https://open.spotify.com/embed/playlist/` + playlistId + `" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
 }
 
@@ -173,3 +204,4 @@ function callApi(method, url, body, callback) {
     xhr.send(body);
     xhr.onload = callback;
 }
+
