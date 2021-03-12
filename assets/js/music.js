@@ -11,6 +11,8 @@ let AUTHORIZE = "https://accounts.spotify.com/authorize"
 let TOKEN = "https://accounts.spotify.com/api/token";
 let playlistWeather = '';
 
+let clearBtn = document.querySelector('#clear-btn');
+
 
 function onPageLoad() {
     client_id = localStorage.getItem("client_id");
@@ -31,6 +33,19 @@ function onPageLoad() {
             getPlaylist();
         }
     }
+}
+
+function clearMusic() {
+    dailyPlaylist.innerHTML = ``;
+}
+
+clearBtn.on('click', function () {
+    clearMusic();
+})
+
+function updateMusic() {
+    clearMusic();
+    getPlaylist(weatherDesc);
 }
 
 let getPlaylist = function (weatherDesc) {
@@ -58,7 +73,7 @@ let getPlaylist = function (weatherDesc) {
     console.log(weatherDesc);
     console.log(playlistWeather);
     
-    let apiUrl = 'https://api.spotify.com/v1/browse/categories/' + playlistWeather + '/playlists?country=US&limit=1'; // Swap out party for the weather type
+    let apiUrl = 'https://api.spotify.com/v1/browse/categories/' + playlistWeather + '/playlists?country=US&limit=1'; 
 
     fetch(apiUrl, {
         headers: {
@@ -203,3 +218,4 @@ function callApi(method, url, body, callback) {
     xhr.send(body);
     xhr.onload = callback;
 }
+
