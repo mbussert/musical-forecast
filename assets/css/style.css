@@ -2,27 +2,19 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 ::-webkit-scrollbar {
     display: none;
 }
 
-main {
-    font-family: 'Fira Sans', sans-serif;
-    /* width: 100%; */
-}
-
-/* .hero-body { */
-    /* width: 100%; */
-/* } */
-
-.landing {
+body {
     min-height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.5)), url("../images/priscilla-du-preez-NP3KdAQc6c4-unsplash.jpg");
     background-size: cover;
-    /* padding: 0rem 5rem; */
+    background-attachment: fixed;
 }
 
 nav {
@@ -49,37 +41,14 @@ nav {
     color: rgb(59, 59, 59);
     cursor: pointer;
 }
-/* .cityFinder {
-    position: absolute;
-    top: 30%;
-    right: 45%;
-} */
-#testbtn {
-    bottom: 60%;
-}
 
-.inputSection {
-    position: absolute;
-    /* top: 30%; */
-    /* right: 45%; */
-    /* position: fixed; */
-
-    top: 8%;
-    left: 1%;
-    margin: auto;
-}
-
-.introButton:hover {
-    cursor: pointer;
+#clear-btn {
+    margin-top: 23%;
+    left: 18%;
 }
 
 .finder-btn:hover { 
     cursor: pointer;
-    /* width: 6vw; */
-    /* height: 3vw; */
-    /* background-color: green; */
-    /* opacity: 55vw; */
-    /* background-color: black; */
 }
 
 .big-text {
@@ -89,26 +58,6 @@ nav {
     transform: translate(-70%, -30%);
     font-size: 5rem;
     color: rgb(59, 59, 59);
-}
-
-.searchIntro {
-    background: rgb(59, 59, 59);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* margin: auto; */
-    /* transform: translateY(100%); */
-}
-
-.introInput {
-    color: rgb(29, 33, 36);
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 3rem;
 }
 
 .intro {
@@ -152,31 +101,22 @@ nav {
     display: inline-block;
 }
 
-.cityFinder {
-    /* padding: 20px; */
+.home{
+    margin-top: 43%;
+    text-align: center;
 }
 
-#home{
-    /* bottom: 50%; */
-    /* left: 50%; */
-    /* position: absolute; */
+h2 {
+    font-weight: bolder;
+    font-size: x-large;
 }
 
-#currentCard {
-/* bottom: 50%; */
-/* left: 40%; */
-/* position: ; */
-/* float: left; */
+.search {
+    margin-bottom: -3vw;
 }
 
-#futureCard {
-    /* float: left; */
-}
-
-#futureCard {
-    /* float: left; */
-}
-
-#playlist {
-    /* float: right; */
+.cityName {
+    margin-bottom: -2vw;
+    font-size: large;
+    font-weight: bold;
 }
