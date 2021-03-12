@@ -36,10 +36,6 @@ function clearMusic() {
     dailyPlaylist.innerHTML = ``;
 }
 
-function updateMusic() {
-    clearMusic();
-    getPlaylist(weatherDesc);
-}
 
 let getPlaylist = function (weatherDesc) {
     
