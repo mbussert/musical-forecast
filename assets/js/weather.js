@@ -41,7 +41,7 @@ $(document).ready(function () {
                 let low = $('<div>').text('Low of ' + (Math.round(data.main.temp_min) + String.fromCharCode(176)));
                 let icon = $('<img>').attr('src', 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
 
-                weatherDesc = data.weather[0].description;
+                weatherDesc = data.weather[0].main;
                 console.log(weatherDesc);
                 getPlaylist(weatherDesc);
 

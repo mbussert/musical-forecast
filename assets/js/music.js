@@ -43,25 +43,21 @@ function updateMusic() {
 
 let getPlaylist = function (weatherDesc) {
     
-    if (weatherDesc = 'clear sky') {
+    if (weatherDesc == 'Clear') {
         playlistWeather = 'decades';
-    } else if (weatherDesc = 'few clouds') {
-        playlistWeather = 'chill';
-    } else if (weatherDesc = 'scattered clouds') {
+    } else if (weatherDesc == 'Clouds') {
         playlistWeather = 'rock';
-    } else if (weatherDesc = 'broken clouds') {
-        playlistWeather = 'hiphop';
-    } else if (weatherDesc = 'shower rain') {
+    } else if (weatherDesc == 'Rain') {
         playlistWeather = 'focus';
-    } else if (weatherDesc = 'rain') {
-        playlistWeather = 'latin';
-    } else if (weatherDesc = 'thunderstorm') {
-        playlistWeather = 'instrumental';
-    } else if (weatherDesc = 'snow') {
+    } else if (weatherDesc == 'Thunderstorm') {
+        playlistWeather = 'hiphop';
+    } else if (weatherDesc == 'Snow') {
         playlistWeather = 'inspirational';
-    } else if (weatherDesc = 'mist') {
+    } else if (weatherDesc == 'Mist') {
         playlistWeather = 'alternative';
-    }
+    } else if (weatherDesc == 'Drizzle') {
+        playlistWeather = 'alternative';
+    } 
 
     console.log(weatherDesc);
     console.log(playlistWeather);
