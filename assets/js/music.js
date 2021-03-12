@@ -77,7 +77,8 @@ let getPlaylist = function (weatherDesc) {
                     getPlaylistTracks(playlistId);
                 });
             } else {
-                alert('Error: ' + response.statusText);
+                // alert('Error: ' + response.statusText);
+                requestAuthorization();
             }
         })
         .catch(function (error) {

@@ -121,8 +121,6 @@ h2 {
     font-weight: bold;
 }
 
-.glass {
-    background: inherit;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-    filter: blur(10px);
+.card a {
+    text-decoration: none;
 }
