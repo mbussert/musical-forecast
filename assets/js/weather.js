@@ -43,6 +43,7 @@ $(document).ready(function () {
 
                 weatherDesc = data.weather[0].description;
                 console.log(weatherDesc);
+                getPlaylist(weatherDesc);
 
                 $('.current-condition').empty();
                 $('.current-condition').append(city, temp.append(icon), high, low)
@@ -71,7 +72,7 @@ $(document).ready(function () {
         }
         localStorage.setItem('recent', JSON.stringify(recent));
 
-        getPlaylist();
+        
     });
 
     function getfiveday(lat, lon) {
