@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
     let weatherButton = $('#finder-btn');
-    let introBtn = $('#introButton');
     recentSearches();
 
     function recentSearches() {
@@ -36,7 +35,7 @@ $(document).ready(function () {
 
             .then(function (data) {
                 console.log(data);
-                let city = $('<div>').text(data.name);
+                let city = $('<div class="cityName">').text(data.name);
                 let temp = $('<div>').text('Currently, it is ' + (Math.round(data.main.temp) + String.fromCharCode(176)));
                 let high = $('<div>').text('High of ' + (Math.round(data.main.temp_max) + String.fromCharCode(176)));
                 let low = $('<div>').text('Low of ' + (Math.round(data.main.temp_min) + String.fromCharCode(176)));
@@ -47,23 +46,21 @@ $(document).ready(function () {
 
                 $('.current-condition').empty();
                 $('.current-condition').append(city, temp.append(icon), high, low)
-
+                
                 getfiveday(data.coord.lat, data.coord.lon)
 
             });
     }
+    function clearWeather() {
+        $('#current-condition').empty();
+        $('#future-conditions').empty();
+    }
 
     weatherButton.on('click', function () {
         clearWeather();
-        
-        // cityFinder is the name of the input box
         let searches = $('#cityFinder').val().trim();
-        // .trim()
-        // console.log(searches)
-        // alert()
 
         getApi(searches);
-        // getfiveday();
         recent = JSON.parse(localStorage.getItem('recent') || '[]');
         if (!recent.includes(searches)) {
             recent.push(searches)
@@ -73,33 +70,8 @@ $(document).ready(function () {
         }
         localStorage.setItem('recent', JSON.stringify(recent));
 
+
     });
-
-    introBtn.on('click', function () {
-        // $('.searchIntro').hide();
-        let cSearch = $('.introInput').val().trim();
-        // window.location("./assets/forecast.html")
-        getApi(cSearch);
-        // getfiveday();
-        // $('./assets/forecast.html').show();
-        recent = JSON.parse(localStorage.getItem('recent') || '[]');
-        if (!recent.includes(cSearch)) {
-            recent.push(cSearch)
-
-            let cities = $('<div>').text(cSearch);
-            $('#recent-searches').append(cities);
-        }
-        localStorage.setItem('recent', JSON.stringify(recent));
-
-        // cSearch.hide()
-        // console.log(cSearch)
-        // citySearch()
-        // getfiveday(cSearch);
-
-        // tl.to('.searchIntro', {y:'0%', duration: 1, stagger: 1});
-
-    })
-
 
     function getfiveday(lat, lon) {
         // where the api is being fetched from
@@ -111,8 +83,6 @@ $(document).ready(function () {
 
             .then(function (data) {
                 console.log(data);
-
-                // $('#currentCard').empty();
 
                 for (let i = 1; i < 6; i++) {
                     let day = new Date(data.daily[i].dt * 1000);
