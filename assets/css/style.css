@@ -9,17 +9,12 @@
     display: none;
 }
 
-/* main { */
-/* } */
-
-/* .landing */
 body {
     min-height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.5)), url("../images/priscilla-du-preez-NP3KdAQc6c4-unsplash.jpg");
     background-size: cover;
     background-attachment: fixed;
-    /* min-height: 100%; */
 }
 
 nav {
@@ -47,20 +42,9 @@ nav {
     cursor: pointer;
 }
 
-#testbtn {
-    bottom: 60%;
-}
-
-#inputSection {
-    position: absolute;
-    top: 43%;
-    left: 15%;
-    /* width: 10%; */
-}
-
-#cityFinder {
-    /* width: 120%; */
-    /* height: 75%; */
+#clear-btn {
+    margin-top: 23%;
+    left: 18%;
 }
 
 .finder-btn:hover { 
@@ -119,18 +103,12 @@ nav {
 
 .home{
     margin-top: 43%;
-    /* background: transparent; */
-    /* bottom: 50%; */
-    /* left: 50%; */
-    /* position: absolute; */
     text-align: center;
 }
 
 h2 {
-    /* text-align: center; */
     font-weight: bolder;
     font-size: x-large;
-    /* margin-bottom: -3vw; */
 }
 
 .search {

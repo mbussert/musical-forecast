@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
     let weatherButton = $('#finder-btn');
-    // let introBtn = $('#introButton');
     recentSearches();
 
     function recentSearches() {
@@ -37,7 +36,6 @@ $(document).ready(function () {
                 let low = $('<div>').text('Low of ' + (Math.round(data.main.temp_min) + String.fromCharCode(176)));
                 let icon = $('<img>').attr('src', 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
 
-                // $('.current-condition').empty();
                 $('#current-condition').append(city, temp.append(icon), high, low)
 
                 getfiveday(data.coord.lat, data.coord.lon)
@@ -46,7 +44,6 @@ $(document).ready(function () {
     }
     function clearWeather() {
         $('#current-condition').empty();
-        // $('#currentCard').empty();
         $('#future-conditions').empty();
     }
 
@@ -67,21 +64,6 @@ $(document).ready(function () {
 
     });
 
-    // introBtn.on('click', function () {
-    //     let cSearch = $('.introInput').val().trim();
-    //     getApi(cSearch);
-    //     recent = JSON.parse(localStorage.getItem('recent') || '[]');
-    //     if (!recent.includes(cSearch)) {
-    //         recent.push(cSearch)
-
-    //         let cities = $('<div>').text(cSearch);
-    //         $('#recent-searches').append(cities);
-    //     }
-    //     localStorage.setItem('recent', JSON.stringify(recent));
-
-    // })
-
-
     function getfiveday(lat, lon) {
         // where the api is being fetched from
         let requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=9c15991b27b985193a8286709e2840d9&units=imperial`
@@ -92,8 +74,6 @@ $(document).ready(function () {
 
             .then(function (data) {
                 console.log(data);
-
-                // $('#currentCard').empty();
 
                 for (let i = 1; i < 6; i++) {
                     let day = new Date(data.daily[i].dt * 1000);
