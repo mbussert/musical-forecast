@@ -42,4 +42,4 @@ https://mbussert.github.io/musical-forecast
 
 ## SCREENSHOT 
 
-<img src="./assets/images/screencapture-mbussert-github-io-musical-forecast-2021-03-12-13_36_22.png>
+<img src="./assets/images/screencapture-mbussert-github-io-musical-forecast-2021-03-12-13_36_22.png">

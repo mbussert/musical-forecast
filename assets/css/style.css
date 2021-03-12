@@ -58,6 +58,7 @@ nav {
     transform: translate(-70%, -30%);
     font-size: 5rem;
     color: rgb(59, 59, 59);
+    margin-left: 3vw;
 }
 
 .intro {
@@ -127,8 +128,8 @@ h2 {
 
 #inputSection {
     position: absolute;
-    top: 40vh;
-    left: 18vw;
+    top: 43vh;
+    left: 15vw;
 }
 
 #cityFinder {
@@ -136,4 +137,12 @@ h2 {
     outline: none;
     border: none;
     height: 48px;
+}
+
+.urlLink {
+    color: black;
+}
+
+.urlLink:hover {
+    color: gray;
 }
