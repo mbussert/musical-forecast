@@ -26,9 +26,9 @@ function onPageLoad() {
         if (access_token == null) {
             requestAuthorization();
         }
-        else {
-            getPlaylist();
-        }
+        // else {
+        //     getPlaylist();
+        // }
     }
 }
 

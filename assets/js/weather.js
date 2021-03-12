@@ -59,7 +59,7 @@ $(document).ready(function () {
 
     weatherButton.on('click', function () {
         clearWeather();
-        clearMusic();
+        updateMusic();
         let searches = $('#cityFinder').val().trim();
 
         getApi(searches);
