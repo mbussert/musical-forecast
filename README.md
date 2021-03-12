@@ -38,3 +38,8 @@ For the CSS file, we tried to minimize the amount of CSS styling because our mai
 ## LINK TO DEPLOYED WEBSITE
 
 https://mbussert.github.io/musical-forecast
+
+
+## SCREENSHOT 
+
+<img src="./assets/images/screencapture-mbussert-github-io-musical-forecast-2021-03-12-13_36_22.png>
