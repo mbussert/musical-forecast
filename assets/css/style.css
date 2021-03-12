@@ -124,3 +124,16 @@ h2 {
 .card a {
     text-decoration: none;
 }
+
+#inputSection {
+    position: absolute;
+    top: 40vh;
+    left: 18vw;
+}
+
+#cityFinder {
+    border-radius: 48px;
+    outline: none;
+    border: none;
+    height: 48px;
+}

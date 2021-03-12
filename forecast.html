@@ -29,12 +29,14 @@
         <h1 class="big-text">Musical Forecast</h1>
 
         <section class="inputSection mr-3 is-large" id="inputSection">
-            <input type="text" class="cityFinder is-large p-3 pl-5 mr-1" id="cityFinder">
-            <button href="#home" class="button is-medium is-rounded" id="finder-btn">
-                <span class="icon">
-                    <i class="fas fa-search is-small"></i>
-                </span>
-            </button>
+            <input type="text" class="cityFinder is-large p-3 pl-5 mr-1" id="cityFinder" placeholder="Search by city name">
+            <a href="#home">
+                <button href="#home" class="button is-medium is-rounded" id="finder-btn">
+                    <span class="icon">
+                        <i class="fas fa-search is-small"></i>
+                    </span>
+                </button>
+            </a>
         </section>
     </section>
 
@@ -50,7 +52,9 @@
 
         <div class="card mx-1 column" id="recentSearches">
             <h2 class="search">Search History</h2>
-            <div class="card-content" id='recent-searches'>
+            <div class="content">
+                <div class="card-content" id="recent-searches">
+                </div>
             </div>
         </div>
 
