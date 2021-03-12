@@ -58,6 +58,7 @@ $(document).ready(function () {
 
     weatherButton.on('click', function () {
         clearWeather();
+        clearMusic();
         let searches = $('#cityFinder').val().trim();
 
         getApi(searches);
@@ -70,7 +71,7 @@ $(document).ready(function () {
         }
         localStorage.setItem('recent', JSON.stringify(recent));
 
-
+        getPlaylist();
     });
 
     function getfiveday(lat, lon) {
