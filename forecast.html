@@ -18,73 +18,109 @@
 </head>
 
 <body onload="onPageLoad()">
-    <main>
-        <section class="landing">
-            <nav class="hero-body has-text-white is-max-width">
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <h2 class="big-text">Musical Forecast</h2>
+    <!-- <main> -->
+    <section class="landing">
+        <nav class="hero-body has-text-white is-max-width">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1 class="big-text">Musical Forecast</h1>
 
-            <section class="inputSection mr-3 is-large" id="inputSection">
-                <input type="text" class="cityFinder is-large p-1 pl-3 mr-1" id="cityFinder">
-                <button href="home" class="button is-small is-rounded" id="finder-btn">
-                    <span class="icon">
-                        <i class="fas fa-search is-small"></i>
-                    </span>
-                </button>
-            </section>
-            <button class="button is-default is-light is-rounded" id="clear-btn" onclick="getPlaylist()">TEST FOR
-                MUSIC
+        <section class="inputSection mr-3 is-large" id="inputSection">
+            <input type="text" class="cityFinder is-large p-3 pl-5 mr-1" id="cityFinder">
+            <button href="home" class="button is-medium is-rounded" id="finder-btn">
+                <span class="icon">
+                    <i class="fas fa-search is-small"></i>
+                </span>
             </button>
         </section>
-    </main>
+        <!-- <button class="button is-default is-light is-rounded" id="clear-btn" onclick="getPlaylist()">TEST FOR -->
+        <!-- MUSIC -->
+        <!-- </button> -->
+    </section>
+    <!-- </main> -->
 
-    <section class="home hero-body has-text-white columns">
-    <div class="card column" id="currentCard">
-        <div class="card-content">
-            <div class="content">
-                <div id="current-condition" class="current-condition p-3">
-                </div>
+    <section class="home columns mx-2" id="home">
+
+        <div class="card column mx-1" id="currentCard">
+            <!-- <div class="card-content"> -->
+                <h2>Current Conditions</h2>
+                <div class="content">
+                    <div id="current-condition" class="current-condition p-3">
+                    </div>
+                <!-- </div> -->
             </div>
         </div>
-    </div>
 
-    <div class="card p-4 column" id="recentSearches">
-        Search History
-        <!-- <div class="card-content"> -->
-            <div class="card-content" id='recent-searches'>
+        <div class="card mx-1 column" id="recentSearches">
+            <!-- <div class="card-content"> -->
+                <h2 class="search">Search History</h2>
+                <div class="card-content" id='recent-searches'>
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <div class="card mx-1 column" id="futureCard">
+            <!-- <div class="card-content"> -->
+                <h2>5 Day Forecast</h2>
+                <div class="content">
+                    <div id="future-conditions" class="future-conditions">
+                    </div>
+                </div>
             <!-- </div> -->
         </div>
-    </div>
 
-    <div class="card column" id="futureCard">
-        <div class="card-content">
-            <div class="content">
-                <div id="future-conditions" class="future-conditions">
+        <div class="card mx-1 column">
+            <!-- <div class="card-content" id="playlist"> -->
+                <h2>Daily Playlist</h2>
+                <div class="content">
+                    <div id="show-playlist" class="daily-playlist">
+                    </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
-    </div>
-
-    <div class="card column">
-        <div class="card-content" id="playlist">
-            <div class="content">
-                <div id="daily-playlist" class="daily-playlist">
-                </div>
-            </div>
-        </div>
-    </div>
 
     </section>
 
-    <section id="about" class="about">
-        <div id="about-us" class="about-us">
+    <section id="about" class="about m-3">
+        <div class="card" id="about-app">
+            <div class="card-content">
+                <div class="content">
+                    <h1>About the app</h1>
+                    Is a creative application brought to you by MHKJ who combines weather and music
+                    into a powerful application. Musical Forecast is consistently being updated to
+                    provide you with up to date weather changes. Along with music to match with the
+                    moment. Enjoy the rhythm of the night, or dance on with the sunshine, or perhaps
+                    you like to sing in the rain. Whatever you enjoy or have planned you will be
+                    prepared with Musical Forecast who will always have you prepared for the day as
+                    well as the prediction for the next 5 days. Thank you and enjoy the Musical
+                    Forecast.
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="card" id="about-us">
+            <div class="card-content">
+                <div class="content">
+                    <h1>About us</h1>
+                    The creative origins of team MHKJ was assembled through Michigan State University
+                    full-stack program. Through the watchful guidance of their instructors Max
+                    VanDuyne, Vince Shury and the friendly neighborhood TA Brandon. They saw the
+                    potential and gifts that MHKJ can bring to the world. That team would be Michael
+                    Bussert, Heather Storseth, Kirk Mayes and James Sewere. This mighty team will
+                    always continually work for the greater good to provide you with updates to assist
+                    you with your everyday needs in preparing for your day ahead. Always remember.
+                    Team MHKJ Assemble!
+                </div>
+            </div>
         </div>
     </section>
+    <br>
 
     <section id="contact" class="contact">
     </section>
